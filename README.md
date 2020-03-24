@@ -7,5 +7,7 @@ Usage
 
 Example: ./plot.sh catania roma "Pesaro e Urbino"
 
+Run ./plot.sh without arguments to get the list of available provinces.
+
 
 References: https://github.com/pcm-dpc/COVID-19/tree/master/metadata 
