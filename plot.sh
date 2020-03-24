@@ -1,15 +1,20 @@
 #!/bin/bash
 
 if [ ! -d COVID-19 ]; then
-    git clone https://github.com/pcm-dpc/COVID-19
+    echo cloning repository
+    git clone https://github.com/pcm-dpc/COVID-19 > /dev/null
 else
+    echo updating repository
     (cd COVID-19
-    git pull)
+    git pull > /dev/null)
+    echo
 fi
 
 usage() {
     echo $0 province-name province-name ...
     echo Example: $0 catania roma \"Pesaro e Urbino\"
+    echo
+    echo Available provinces: $(cat COVID-19/dati-province/dpc-covid19-ita-province.csv  | cut -d , -f 6 | sort -u)
 }
 
 province=$1
