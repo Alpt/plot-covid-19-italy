@@ -28,6 +28,8 @@ cp plot.gp /tmp/plot-covid.gp
 
 first=0
 for p in "$@"; do
+    
+    grep ",$p," -i COVID-19/dati-province/*-[0-9]*.csv | tail -n 1 # show latest record
 
     grep ",$p," -i COVID-19/dati-province/*-[0-9]*.csv | cut -d : -f 2-  > "/tmp/plot-covid-$p.data"
     
