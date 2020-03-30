@@ -11,16 +11,13 @@ else
 fi
 
 usage() {
-    echo "$0 [-vel|-log] province-name province-name ..."
+    echo "$0 [-vel|-log]"
     echo
-    echo Example: $0 catania roma \"Pesaro e Urbino\"
-    echo Example: $0 -vel catania roma
-    echo Example: $0 -log catania roma
+    echo Example: $0 -vel
+    echo Example: $0 -log
     echo 
     echo " -vel grafica la velocita'"
     echo " -log grafica in scala logaritmica"
-    echo
-    echo Available provinces: $(cat COVID-19/dati-province/dpc-covid19-ita-province.csv  | cut -d , -f 6 | sort -u)
 }
 
 cp plot.gp /tmp/plot-covid.gp
