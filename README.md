@@ -6,9 +6,9 @@ Usage
 
 ./plot.sh [-vel|-log] province-name province-name ...
 
-Example: ./plot.sh catania roma "Pesaro e Urbino"
-Example: ./plot.sh -vel catania roma
-Example: ./plot.sh -log catania roma
+Example: ./plot.sh catania roma "Pesaro e Urbino"  
+Example: ./plot.sh -vel catania roma  
+Example: ./plot.sh -log catania roma  
 
  -vel grafica la velocita'
  -log grafica in scala logaritmica
