@@ -10,7 +10,7 @@ Example: ./plot.sh catania roma "Pesaro e Urbino"
 Example: ./plot.sh -vel catania roma  
 Example: ./plot.sh -log catania roma  
 
- -vel grafica la velocita'
+ -vel grafica la velocita'  
  -log grafica in scala logaritmica
 
 
