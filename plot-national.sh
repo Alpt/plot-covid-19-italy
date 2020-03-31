@@ -44,12 +44,12 @@ cat COVID-19/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale*-[0-9]
 
 cat COVID-19/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale*-[0-9]*.csv | grep -v totale_casi > "/tmp/plot-covid-$p.data"
 
-echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:11 with lines title \"$p\"" >> /tmp/plot-covid.gp
+echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:12 with lines title \"$p\"" >> /tmp/plot-covid.gp
 
 plotreplot="replot"
 
 if ((velocity)); then
-  echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:(d(\$11)) with lines title \"velocita' $p\"" >> /tmp/plot-covid.gp
+  echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:(d(\$12)) with lines title \"velocita' $p\"" >> /tmp/plot-covid.gp
 fi
     
 

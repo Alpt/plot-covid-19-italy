@@ -51,12 +51,12 @@ for p in "$@"; do
 
     grep ",$p," -i COVID-19/dati-regioni/dpc-covid19-ita-regioni-[0-9]*.csv | cut -d : -f 2- | grep -v totale_casi  > "/tmp/plot-covid-$p.data"
     
-    echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:15 with lines title \"$p\"" >> /tmp/plot-covid.gp
+    echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:16 with lines title \"$p\"" >> /tmp/plot-covid.gp
 
     plotreplot="replot"
 
     if ((velocity)); then
-      echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:(d(\$15)) with lines title \"velocita' $p\"" >> /tmp/plot-covid.gp
+      echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:(d(\$16)) with lines title \"velocita' $p\"" >> /tmp/plot-covid.gp
     fi
     
 done
