@@ -13,6 +13,11 @@ Example: ./plot.sh -log catania roma
  -vel grafica la velocita'  
  -log grafica in scala logaritmica
 
+Warning
+-------
+
+From day 29, to day 31 of March the .csv format changed. It is possible that Protezione civile will do other updates in the future.
+I do not guarantee that I will keep this software up-to-date!
 
 Dependencies
 ------------
