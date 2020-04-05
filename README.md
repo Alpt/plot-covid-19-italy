@@ -28,3 +28,4 @@ References
 ----------
 
 https://github.com/pcm-dpc/COVID-19/tree/master/metadata 
+http://katolaz.net/covid-2019/growth.html

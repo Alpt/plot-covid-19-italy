@@ -33,6 +33,8 @@ fi
 cp plot.gp /tmp/plot-covid.gp
 
 plotreplot="plot"
+baselinePlotted=0
+growth_rate=0
 for p in "$@"; do
 
     if [ "$p" = "-vel" ]
@@ -40,6 +42,13 @@ for p in "$@"; do
         velocity=1
         continue
     fi
+
+    if [ "$p" = "-growth-rate" ]
+    then
+        growth_rate=1
+        continue
+    fi
+
 
     if [ "$p" = "-log" ]
     then
@@ -51,13 +60,25 @@ for p in "$@"; do
 
     grep ",$p," -i COVID-19/dati-province/*-[0-9]*.csv | cut -d : -f 2-  > "/tmp/plot-covid-$p.data"
     
-    echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:10 with lines title \"$p\"" >> /tmp/plot-covid.gp
+    if ((growth_rate)); then
+        if !((baselinePlotted)); then
+            echo "plot 1 title \"linea di zero crescita\"" >> /tmp/plot-covid.gp
+            baselinePlotted=1
+        fi
+    else
+        echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:10 with lines title \"$p\"" >> /tmp/plot-covid.gp
+    fi
 
     plotreplot="replot"
 
     if ((velocity)); then
       echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:(d(\$10)) with lines title \"velocita' $p\"" >> /tmp/plot-covid.gp
     fi
+
+    if ((growth_rate)); then
+      echo "$plotreplot \"/tmp/plot-covid-$p.data\" using 1:(dr(\$10)) with lines title \"growth rate $p\"" >> /tmp/plot-covid.gp
+    fi
+
     
 done
 
