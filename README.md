@@ -4,14 +4,17 @@ Plot covid 19 data with gnuplot per province, using Protezione Civile data
 Usage
 -----
 
-./plot.sh [-vel|-log] province-name province-name ...
+./plot.sh [-growth-rate|-vel|-log] province-name province-name ...
 
 Example: ./plot.sh catania roma "Pesaro e Urbino"  
+Example: ./plot.sh -growth-rate catania roma  
 Example: ./plot.sh -vel catania roma  
 Example: ./plot.sh -log catania roma  
 
+ -growth-rate grafica il growth rate, vedi http://katolaz.net/covid-2019/growth.html E' una misura statistica importante  
  -vel grafica la velocita'  
  -log grafica in scala logaritmica
+
 
 Warning
 -------

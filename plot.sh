@@ -11,12 +11,14 @@ else
 fi
 
 usage() {
-    echo "$0 [-vel|-log] province-name province-name ..."
+    echo "$0 [-growth-rate|-vel|-log] province-name province-name ..."
     echo
     echo Example: $0 catania roma \"Pesaro e Urbino\"
+    echo Example: $0 -growth-rate catania roma
     echo Example: $0 -vel catania roma
     echo Example: $0 -log catania roma
     echo 
+    echo " -growth-rate grafica il growth rate, vedi http://katolaz.net/covid-2019/growth.html E' una misura statistica importante"
     echo " -vel grafica la velocita'"
     echo " -log grafica in scala logaritmica"
     echo

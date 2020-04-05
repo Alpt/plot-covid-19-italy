@@ -11,11 +11,13 @@ else
 fi
 
 usage() {
-    echo "$0 [-vel|-log]"
+    echo "$0 [-growth-rate|-vel|-log]"
     echo
+    echo Example: $0 -growth-rate
     echo Example: $0 -vel
     echo Example: $0 -log
     echo 
+    echo " -growth-rate grafica il growth rate, vedi http://katolaz.net/covid-2019/growth.html E' una misura statistica importante"
     echo " -vel grafica la velocita'"
     echo " -log grafica in scala logaritmica"
 }
